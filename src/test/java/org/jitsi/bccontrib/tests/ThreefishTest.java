@@ -1,14 +1,14 @@
 package org.jitsi.bccontrib.tests;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Arrays;
 
 import org.jitsi.bccontrib.engines.ThreefishCipher;
 import org.bouncycastle.crypto.params.*;
 import org.jitsi.bccontrib.params.ParametersForThreefish;
 import org.jitsi.bccontrib.util.ByteLong;
-
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class ThreefishTest {
 
@@ -315,7 +315,8 @@ public class ThreefishTest {
         return true;
     }
 
-    @Test public void vectorTest() {
+    @Test
+    public void vectorTest() {
         try {
             assertTrue(basicTest256());
             assertTrue(basicTest512());

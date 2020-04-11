@@ -26,6 +26,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 package org.jitsi.bccontrib.tests;
 
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -35,9 +37,8 @@ import org.jitsi.bccontrib.digests.Skein;
 import org.jitsi.bccontrib.macs.SkeinMac;
 import org.bouncycastle.crypto.params.KeyParameter;
 import org.jitsi.bccontrib.params.ParametersForSkein;
-
-import static org.junit.Assert.assertTrue;
-import org.junit.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class SkeinTest {
 
@@ -102,7 +103,7 @@ public class SkeinTest {
         return true;
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         InputStream file = getClass().getResourceAsStream("/skein_golden_kat.txt");
         scanner = new KatScanner(file);
